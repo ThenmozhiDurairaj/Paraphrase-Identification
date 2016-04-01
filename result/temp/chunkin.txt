@@ -1,0 +1,16 @@
+(S
+  (NP (NNP PGandE) (NNP Corp.) (NNS shares))
+  (VP (VBD jumped)
+    (NP
+      (NP ($ $) (CD 1.63))
+      (CC or)
+      (NP (CD 8) (NN percent)))
+    (PP (TO to)
+      (NP
+        (NP ($ $) (CD 21.03))
+        (PP (IN on)
+          (NP (DT the) (NNP New) (NNP York) (NNP Stock) (NNP Exchange)))))
+    (PP (IN on)
+      (NP (NNP Friday))))
+  (. .))
+

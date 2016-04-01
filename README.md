@@ -10,19 +10,21 @@
 
 2. To use the source
 
-	a. Software Required: WordNet-2.1 package
-
-		     	      edu.mit.jwi_2.1.4.jar
-
-			      edu.sussex.nlp.jws.beta.11.jar
-
-			      jaws-bin.jar
-
-			      stanford-corenlp-2012-07-09.jar
-
-			      stanford-corenlp-2012-07-06-models.jar
+	a. Software Required: 
 		
-			      xom.jar
+		WordNet-2.1 package
+
+		edu.mit.jwi_2.1.4.jar
+
+		edu.sussex.nlp.jws.beta.11.jar
+
+		jaws-bin.jar
+
+		stanford-corenlp-2012-07-09.jar
+
+		stanford-corenlp-2012-07-06-models.jar
+		
+		xom.jar
 
 	b. Input: **/data/in.txt**
 

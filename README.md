@@ -42,7 +42,7 @@
 
 		java svm_train -c 32768.0 -g 0.0078125 data/feature_set_train.txt data/model.txt
 
-	(**Note: ** For the sake of convenience, we have trained MSR training data and the model file is available in  **data/model.txt**)
+	(**Note:** For the sake of convenience, we have trained MSR training data and the model file is available in  **data/model.txt**)
 
 7. Predict test data whether paraphrases or not using the command
 

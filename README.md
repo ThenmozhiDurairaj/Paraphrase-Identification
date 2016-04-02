@@ -34,7 +34,7 @@
 
 (**Note:** To evaluate paraphrase identification for MSR corpus, download data set from http://research.microsoft.com/en-us/downloads/607d14d9-20cd-47e3-85bc-a2f65cd28042/)
 
-(**Note: ** For the sake of convenience, we have prepared feature vectors for MSR training and test data that are available in **data/feature_set_train.txt** and **data/feature_set_test.txt** respectively)
+(**Note:** For the sake of convenience, we have prepared feature vectors for MSR training and test data that are available in **data/feature_set_train.txt** and **data/feature_set_test.txt** respectively)
 
 4. Download LIBSVM tool from the link https://www.csie.ntu.edu.tw/~cjlin/libsvm/
 

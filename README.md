@@ -4,35 +4,11 @@
 
 	a. Download [stanford-corenlp-2012-07-06-models.jar](https://github.com/evandrix/stanford-corenlp/raw/master/stanford-corenlp-2012-07-06-models.jar) in *\lib* folder
 
-	b. Run the command 
+	b. Run the command to obtain 4 clause based features
 
-		java –jar ParId.jar data/in.txt result/out.txt
+		java –jar ParId.jar data/in_sample.txt result/out_sample.txt
 
-2. To use the source
-
-	a. Software Required: 
-		
-		WordNet-2.1 package
-
-		edu.mit.jwi_2.1.4.jar
-
-		edu.sussex.nlp.jws.beta.11.jar
-
-		jaws-bin.jar
-
-		stanford-corenlp-2012-07-09.jar
-
-		stanford-corenlp-2012-07-06-models.jar
-		
-		xom.jar
-
-	b. Input: **/data/in.txt**
-
-	c. Output: **/result/out.txt** (4 clause based features)
-
-	d. Run the source file **ParId.java**
-
-3. Evaluate 8 machine translation metrics
+2. Evaluate 8 machine translation (MT) metrics to obtain 15 MT based features
 	
 	[BLEU](https://github.com/stanfordnlp/phrasal/) (4 features (5-8) bleu-1 to bleu-4) 
 
@@ -50,12 +26,24 @@
 
 	MAXSIM (1 feature (19)) package is obtained from the author
 
-4. Construct feature vectors for the training data in the form of 
+3. Construct feature vectors for the training data in the form of 
 
 	1 1:0.6666667 2:1.0 3:1.0 4:0.7647059 5:0.7895 6:0.6667 7:0.5294 8:0.3750 9:3.1662 10:0.2198 11:0.0000 12:0.0000 13:0.0000 14:0.5 15:0.500 16:0.5909787104331845 17:0.5586206912994385 18:0.49838517 19:0.567995548
+	
+4. Construct feature vectors for the test data using the same procedure
 
-5.	Train SVM with a set of feature vectors of training data with optimized c and g parameter values and build a model (feature vectors for MSR training data are available in **data/feature_set_train.txt**, model file is in **data/model.txt**)
+(**Note:** To evaluate paraphrase identification for MSR corpus, download data set from http://research.microsoft.com/en-us/downloads/607d14d9-20cd-47e3-85bc-a2f65cd28042/)
 
-6.	Construct feature vectors for the test data using the same procedure (feature vectors for MSR test data are available in **data/feature_set_test.txt**)
+(**Note: ** For the sake of convenience, we have prepared feature vectors for MSR training and test data that are available in **data/feature_set_train.txt** and **data/feature_set_test.txt** respectively)
 
-7.	Predict whether paraphrase or not 
+4. Download LIBSVM tool from the link https://www.csie.ntu.edu.tw/~cjlin/libsvm/
+
+5.	Train SVM with a set of feature vectors of training data with optimized c and g parameter values and build a model using the command 
+
+	java svm_train -c 32768.0 -g 0.0078125 data/feature_set_train.txt data/model.txt
+
+	(**Note: ** For the sake of convenience, we have trained MSR training data and the model file is available in  **data/model.txt**)
+
+6.	Predict test data whether paraphrases or not using the command
+
+	java svm_predict data/feature_set_test.txt data/model.txt out.txt

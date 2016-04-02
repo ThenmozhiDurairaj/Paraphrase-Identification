@@ -36,14 +36,14 @@
 
 (**Note:** For the sake of convenience, we have prepared feature vectors for MSR training and test data that are available in **data/feature_set_train.txt** and **data/feature_set_test.txt** respectively)
 
-4. Download LIBSVM tool from the link https://www.csie.ntu.edu.tw/~cjlin/libsvm/
+5	 Download LIBSVM tool from the link https://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
-5.	Train SVM with a set of feature vectors of training data with optimized c and g parameter values and build a model using the command 
+6.	Train SVM with a set of feature vectors of training data with optimized c and g parameter values and build a model using the command 
 
 		java svm_train -c 32768.0 -g 0.0078125 data/feature_set_train.txt data/model.txt
 
 	(**Note: ** For the sake of convenience, we have trained MSR training data and the model file is available in  **data/model.txt**)
 
-6.	Predict test data whether paraphrases or not using the command
+7.	Predict test data whether paraphrases or not using the command
 
 		java svm_predict data/feature_set_test.txt data/model.txt out.txt

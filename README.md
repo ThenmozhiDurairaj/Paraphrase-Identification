@@ -8,7 +8,7 @@
 
 		java –jar ParId.jar data/in_sample.txt result/out_sample.txt
 		
-		(**Note 1:** out_sample.txt is in the form of **1 1:0.6666667 2:1.0 3:1.0 4:0.7647059**, where the first field is class label and fields 2 to 5 are 1 to 4 clause based features namely concept score, relation score, proposition score and word score)
+	(**Note 1:** out_sample.txt is in the form of **1 1:0.6666667 2:1.0 3:1.0 4:0.7647059**, where the first field is class label and fields 2 to 5 are 1 to 4 clause based features namely concept score, relation score, proposition score and word score)
 
 2. Evaluate 8 machine translation (MT) metrics to obtain 15 MT based features
 	

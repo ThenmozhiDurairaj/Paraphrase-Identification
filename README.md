@@ -7,6 +7,8 @@
 	b. Run the command to obtain 4 clause based features
 
 		java –jar ParId.jar data/in_sample.txt result/out_sample.txt
+		
+	(**Note 1:** out_sample.txt is in the form of **1 1:0.6666667 2:1.0 3:1.0 4:0.7647059**, where the first field is class label and fields 2 to 5 are 1 to 4 clause based features namely concept score, relation score, proposition score and word score)
 
 2. Evaluate 8 machine translation (MT) metrics to obtain 15 MT based features
 	
@@ -32,18 +34,20 @@
 	
 4. Construct feature vectors for the test data using the same procedure
 
-	(**Note:** To evaluate paraphrase identification for MSR corpus, download data set from http://research.microsoft.com/en-us/downloads/607d14d9-20cd-47e3-85bc-a2f65cd28042/)
+	(**Note 2:** To evaluate paraphrase identification for MSR corpus, download data set from http://research.microsoft.com/en-us/downloads/607d14d9-20cd-47e3-85bc-a2f65cd28042/)
 
-	(**Note:** For the sake of convenience, we have prepared feature vectors for MSR training and test data that are available in **data/feature_set_train.txt** and **data/feature_set_test.txt** respectively)
+	(**Note 3:** For the sake of convenience, we have prepared feature vectors for MSR training and test data that are available in **data/msr_feature_set_train.txt** and **data/msr_feature_set_test.txt** respectively)
 
 5. Download LIBSVM tool from the link https://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
 6. Train SVM with a set of feature vectors of training data with optimized c and g parameter values and build a model using the command 
 
-		java svm_train -c 32768.0 -g 0.0078125 data/feature_set_train.txt data/model.txt
+		java svm_train -c 32768.0 -g 0.0078125 data/msr_feature_set_train.txt data/msr_model.txt
 
-	(**Note:** For the sake of convenience, we have trained MSR training data and the model file is available in  **data/model.txt**)
+	(**Note 4:** For the sake of convenience, we have trained MSR training data and the model file is available in  **data/msr_model.txt**)
 
 7. Predict test data whether paraphrases or not using the command
 
-		java svm_predict data/feature_set_test.txt data/model.txt out.txt
+		java svm_predict data/msr_feature_set_test.txt data/msr_model.txt out.txt
+		
+	(**Note 5:** out.txt may be compared with class labels specified in msr_feature_set_test.txt for measuring the performance)
